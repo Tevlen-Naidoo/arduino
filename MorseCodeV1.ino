@@ -47,6 +47,13 @@ void beep(char c)
   delay(INTRA_CHAR_SPACE);
 }
 
+void parseMorseCode(char *message)
+{
+  for (; *message; message++)
+  {
+    beep(*message);
+  }
+}
 
 void setup()
 {
@@ -57,10 +64,7 @@ void loop()
 {
   const char *message = ".... . .-.. .-.. --- / .-- --- .-. .-.. -..";
 
-  for (; *message; message++)
-  {
-    beep(*message);
-  }
+  parseMorseCode(message);
 
   // Ensuring there is enough time
   // between the last and first words
