@@ -1,10 +1,12 @@
 CC = gcc
 
-CFLAGS = -Wall -Wextra -pedantic -Werror=implicit-function-declaration -g
+INCLUDES = -Iutils -IMorseCodeV2
+
+CFLAGS = -Wall -Wextra -pedantic -Werror=implicit-function-declaration -g $(INCLUDES)
 
 TARGET = morse
 
-SRCS = MorseCodeV2.c morse.c morseDict.c
+SRCS = MorseCodeV2/MorseCodeV2.c MorseCodeV2/morse.c MorseCodeV2/morseDict.c
 
 all: morse-v2
 
