@@ -27,7 +27,7 @@ void setup() {
 }
 
 void loop() {
-  val = analogRead(sensor); // read the value from the sensor
+  val = analogRead(SENSOR); // read the value from the sensor
   Serial.println(val);      // print the value to the serial port
 
   if (Serial.available() > 0) {
@@ -43,9 +43,9 @@ void loop() {
 
       // now we have the 3 numbers stored as hex numbers
       // we need to decode them into 3 bytes r, g, and b
-      r = hex2dex(buffer[1]) + hex2dec(buffer[0]) * 16;
-      g = hex2dex(buffer[3]) + hex2dec(buffer[2]) * 16;
-      b = hex2dex(buffer[5]) + hex2dec(buffer[4]) * 16;
+      r = hex2dex(buffer[1]) + hex2dex(buffer[0]) * 16;
+      g = hex2dex(buffer[3]) + hex2dex(buffer[2]) * 16;
+      b = hex2dex(buffer[5]) + hex2dex(buffer[4]) * 16;
 
       pointer = 0;  // reset the pointer so we can reuse the buffer
     }

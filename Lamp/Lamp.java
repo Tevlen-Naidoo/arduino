@@ -1,7 +1,7 @@
 import processing.serial.*;
 
 import java.net.*;
-import java.io.*;
+import java.io.InputStreamReader;
 import java.util.*;
 
 String feed = "http://makezine.com/feed/";
